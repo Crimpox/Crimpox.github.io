@@ -1,14 +1,18 @@
-#version 150
+#ifdef GL_ES
+precision mediump float;
+#endif
 
-attribute vec4 position;
+attribute vec3 aPosition;
 
-varying texcoord;
+attribute aTexCoord;
+varying vec2 vTexCoord;
 
-void main(void)
-{
-    // Some drivers don't like position being written here
-    // with the tessellation stages enabled also.
-    // Comment next line when Tess.Eval shader is enabled.
-    gl_Position = vec4(position, 0.0, 1.0);
-    texcoord = position * vec2(0.5) + vec2(0.5);
+void main(){
+    vec4 positionVec4 = vec4(aPosition, 1.0);
+
+    positionVec4.xy = positionVec4.xy * 2.0 - 1.0;
+
+    vTexCoord = aTexCoord;
+    gl_Position = positionVec4;
+
 }
