@@ -7,7 +7,7 @@ function preload(){
 }
 
 function setup(){
-    createCanvas(500, 500);
+    createCanvas(500, 500, WEBGL);
     background(0);
     shader(sdfShader);
     noStroke();
