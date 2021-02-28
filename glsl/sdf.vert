@@ -4,7 +4,7 @@ precision mediump float;
 
 attribute vec3 aPosition;
 
-attribute aTexCoord;
+attribute vec2 aTexCoord;
 varying vec2 vTexCoord;
 
 void main(){
