@@ -11,7 +11,7 @@ void main(){
     vec2 uv =  gl_FragCoord.xy / u_resolution;
 
 
-    vec3 color = vec3(uv, uv, 1.0);
+    vec3 color = vec3(uv.x, uv.y, 1.0);
 
     gl_FragColor = vec4(color, 1.0);
 
