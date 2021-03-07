@@ -8,7 +8,7 @@ uniform float u_time;
 uniform vec2 u_float;
 
 void main(){
-    vec2 uv =  gl_FragCoord / u_resolution;
+    vec2 uv =  gl_FragCoord.xy / u_resolution;
 
 
     vec3 color = vec3(uv, uv, 1.0);
